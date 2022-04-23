@@ -16,6 +16,8 @@ Vagrant.configure("2") do |config|
 
   
   config.vm.define "ansible" do |ansible|
+	ansible.memory = 8192
+	ansible.cpus = 4
 	ansible.vm.box = "bento/ubuntu-20.04"
 	ansible.vm.network "public_network", ip: "192.168.0.25"
 	ansible.vm.provider "virtualbox" do |vb|
@@ -33,6 +35,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "foundtyvtt" do |foundtyvtt|
+	foundtyvtt.memory = 8192
+	foundtyvtt.cpus = 4
 	foundtyvtt.vm.box = "bento/ubuntu-20.04"
 	foundtyvtt.vm.network "public_network", ip: "192.168.0.30"
 	foundtyvtt.vm.provider "virtualbox" do |vb|

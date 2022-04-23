@@ -1,0 +1,10 @@
+---
+# default variable values
+
+foundry_home_dir: /opt/foundry
+foundry_data_dir: /opt/foundry/data
+foundry_cache_dir: /opt/foundry/cache
+
+foundry_username: antotoshh
+foundry_password: 17051989Wann
+

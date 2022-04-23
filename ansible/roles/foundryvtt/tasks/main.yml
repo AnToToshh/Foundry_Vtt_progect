@@ -1,0 +1,41 @@
+---
+- name: Create the foundry directory
+  file:
+    path: "{{ foundry_home_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Create the foundry data directory
+  file:
+    path: "{{ foundry_data_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Create the foundry cache directory
+  file:
+    path: "{{ foundry_cache_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Install Docker composition file
+  template:
+    src: docker-compose.yml
+    dest: "{{ foundry_home_dir }}/docker-compose.yml"
+
+- name: Set up foundryvtt-docker systemd service
+  block:
+    - name: Install systemd service file for foundryvtt-docker
+      template:
+        src: foundryvtt-docker.service
+        dest: /etc/systemd/system/foundryvtt-docker.service
+
+    - name: Reload systemd daemon
+      systemd:
+        daemon_reload: true
+
+    - name: Enable foundryvtt-docker systemd service to start on boot
+      systemd:
+        name: foundryvtt-docker.service
+        enabled: true
+  when:
+    - ansible_service_mgr == "systemd"

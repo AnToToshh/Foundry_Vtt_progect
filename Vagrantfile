@@ -13,33 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
 
-#   config.vm.define "ubuntu" do |ubuntu|
-# 	ubuntu.vm.box = "bento/ubuntu-20.04"
-# 	ubuntu.vm.network "public_network", ip: "192.168.0.22"
-# 	ubuntu.vm.provider "virtualbox" do |vb|
-# 		vb.name = 'ubuntu-less_22'
-# 	end
-# 	  ubuntu.vm.provision "shell", inline: <<-SHELL
-# 		sudo apt-get install -y net-tools
-# 		sudo apt-get install -y default-jdk
-# 		sudo apt-get install -y openssh-server
-# 	   SHELL
-	   
-#   end
 
-#   config.vm.define "centos_22" do |centos_22|
-# 	centos_22.vm.box = "centos/8"
-# 	centos_22.vm.network "public_network", ip: "192.168.0.23"
-# 	centos_22.vm.provider "virtualbox" do |vb|
-# 		vb.name = 'centos-less_22'
-# 	end
-# 	  centos_22.vm.provision "shell", inline: <<-SHELL
-# 		sudo yum install -y net-tools
-# 		sudo yum install -y default-jdk
-# 		sudo yum install -y openssh-server
-# 	   SHELL
-	   
-#   end
   
   config.vm.define "ansible" do |ansible|
 	ansible.vm.box = "bento/ubuntu-20.04"
@@ -53,6 +27,7 @@ Vagrant.configure("2") do |config|
 		sudo apt-get install -y openssh-server
 		apt-get install -y apache2
 		apt-get -y install python-pip3
+		pip3 install ansible
 	   SHELL
 	   
   end

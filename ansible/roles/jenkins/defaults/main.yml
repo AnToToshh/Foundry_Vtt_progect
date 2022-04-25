@@ -1,5 +1,0 @@
----
-# defaults file for jenkins
-
-jenkins_home_dir: /opt/jenkins
-jenkins_data_dir: /opt/jenkins/data

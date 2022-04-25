@@ -18,5 +18,7 @@ distribution.
 - A functioning [Docker](https://docs.docker.com/get-docker/) installation.
 - A [FoundryVTT.com](https://foundryvtt.com/auth/register/) account with a purchased
   software license.
+  
+  
 
 

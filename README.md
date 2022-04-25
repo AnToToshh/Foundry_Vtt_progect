@@ -22,7 +22,7 @@ distribution.
 ##Multiple foundry##
 to raise multiple foundry container instances, you need to add block in docker-compose.yml
   
-#Exemple# 
+# Exemple # 
 
 ```
 version: "3.8"

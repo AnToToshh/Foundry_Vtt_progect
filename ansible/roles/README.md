@@ -1,19 +1,8 @@
-ansible-nginx-docker-compose
-============================
-
-Ansible role to deploy nginx on a container managed by docker-compose.
-Nginx is configured to use SSL/TLS using a self signed certificate or a
-Let's Encrypt certificate (obtained with certbot).
 
 Requirements
 ------------
 
 None
-
-Role Variables
---------------
-
-See [`defaults/main.yml`](./defaults/main.yml)
 
 Dependencies
 ------------
@@ -22,7 +11,6 @@ None
 
 Install Playbook
 ----------------
-
 ---
 - name: Install foundry
   hosts: localhost
@@ -36,9 +24,6 @@ Install Playbook
     - docker_install
 ```
 
-Install Foudry
-----------------
-
 ---
 - name: Install foundry
   hosts: localhost
@@ -51,10 +36,6 @@ Install Foudry
   roles:
     - foundryvtt
     
-
-Install Jenkins
-----------------
-
  ---
 - name: Install foundry
   hosts: localhost

@@ -25,7 +25,7 @@ Install Playbook
   remote_user: vagrant
   roles:
     - docker_install
-```
+
 
 ---
 - name: Install foundry

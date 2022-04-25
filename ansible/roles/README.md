@@ -24,7 +24,7 @@ Install Playbook
     - docker_install
 ```
 
- 
+``` 
 ---
 - name: Install foundry
   hosts: localhost
@@ -36,7 +36,9 @@ Install Playbook
   remote_user: vagrant
   roles:
     - foundryvtt
-    
+ ```
+ 
+ ```
  ---
 - name: Install jenkins
   hosts: localhost

@@ -19,6 +19,58 @@ distribution.
 - A [FoundryVTT.com](https://foundryvtt.com/auth/register/) account with a purchased
   software license.
   
+  ##Multiple foundry##
+  to raise multiple foundry container instances, you need to add block in docker-compose.yml
   
+  exenle 
 
+```
+version: "3.8"
+
+volumes:
+  data:
+
+services:
+  foundry1:
+    image: felddy/foundryvtt:latest
+    hostname: foundry_docker
+    init: true
+    restart: "unless-stopped"
+    volumes:
+      - type: bind
+        source: {{ foundry_data_dir }}
+        target: /data
+      - type: bind
+        source: {{ foundry_cache_dir }}
+        target: /cache
+    environment:
+      - FOUNDRY_PASSWO={{ foundry_password }}
+      - FOUNDRY_USERNAME={{ foundry_username }}
+    ports:
+      - target: 30000
+        published: 30000
+        protocol: tcp
+        mode: host
+        
+   foundry2:
+    image: felddy/foundryvtt:latest
+    hostname: foundry_docker
+    init: true
+    restart: "unless-stopped"
+    volumes:
+      - type: bind
+        source: {{ foundry_data_dir }}
+        target: /data
+      - type: bind
+        source: {{ foundry_cache_dir }}
+        target: /cache
+    environment:
+      - FOUNDRY_PASSWO={{ foundry_password }}
+      - FOUNDRY_USERNAME={{ foundry_username }}
+    ports:
+      - target: 30001
+        published: 30001
+        protocol: tcp
+        mode: host  
+```
 

@@ -10,7 +10,7 @@ Dependencies
 None
 
 Install Playbook
-
+```
 ---
 - name: Install docker
   hosts: localhost
@@ -22,7 +22,7 @@ Install Playbook
   remote_user: vagrant
   roles:
     - docker_install
-
+```
 
 ---
 - name: Install foundry

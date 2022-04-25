@@ -20,49 +20,50 @@ Dependencies
 
 None
 
-Example Playbook
+Install Playbook
 ----------------
 
-To deploy nginx with a self-signed certificate (role default):
-```yaml
-- hosts: 
-    - myhost.com
+---
+- name: Install foundry
+  hosts: localhost
+  #connection: ssh
+  become: true
+  become_method: su
+  become_exe: 'sudo su -'
+  become_user: root
+  remote_user: vagrant
   roles:
-    - role: "ansible-nginx-docker-compose"
-        become: "yes"
-        tags:
-          - "nginxdc"
+    - docker_install
 ```
 
-To deploy nginx with Let's Encrypt (DNS for the host must be
-configured beforehand):
-```yaml
-- hosts: 
-    - myhost.com
-  vars:
-    nginxdc_le_enable: yes
-    nginxdc_le_domains:
-      - myhost.com
-    nginxdc_le_email: myemail@myemaildomain.com
-    nginxdc_nginx_conf_d_templates:
-      - "nginx/conf.d/default-tls.conf"
-    nginxdc_nginx_template_default_ssl_cert : "/etc/letsencrypt/live/myhost.com/fullchain.pem"
-    nginxdc_nginx_template_default_ssl_cert_key : "/etc/letsencrypt/live/myhost.com/privkey.pem"
+Install Foudry
+----------------
 
+---
+- name: Install foundry
+  hosts: localhost
+  #connection: ssh
+  become: true
+  become_method: su
+  become_exe: 'sudo su -'
+  become_user: root
+  remote_user: vagrant
   roles:
-    - role: "ansible-nginx-docker-compose"
-        become: "yes"
-        tags:
-          - "nginxdc"
+    - foundryvtt
+    
 
-```
+Install Jenkins
+----------------
 
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-Artefactual Systems
+ ---
+- name: Install foundry
+  hosts: localhost
+  # connection: ssh
+  become: true
+  become_method: su
+  become_exe: 'sudo su -'
+  become_user: root
+  remote_user: vagrant
+  roles:
+    # - docker_install
+    - jenkins

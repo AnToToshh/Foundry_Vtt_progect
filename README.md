@@ -18,6 +18,7 @@ distribution.
 - A functioning [Docker](https://docs.docker.com/get-docker/) installation.
 - A [FoundryVTT.com](https://foundryvtt.com/auth/register/) account with a purchased
   software license.
+- A openjdk-8-jdk
   
 ## Multiple foundry ##
 to raise multiple foundry container instances, you need to add block in docker-compose.yml

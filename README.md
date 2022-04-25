@@ -19,10 +19,10 @@ distribution.
 - A [FoundryVTT.com](https://foundryvtt.com/auth/register/) account with a purchased
   software license.
   
-  ##Multiple foundry##
-  to raise multiple foundry container instances, you need to add block in docker-compose.yml
+##Multiple foundry##
+to raise multiple foundry container instances, you need to add block in docker-compose.yml
   
-  exenle 
+#Exemple# 
 
 ```
 version: "3.8"

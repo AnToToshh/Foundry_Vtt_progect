@@ -12,7 +12,7 @@ None
 Install Playbook
 ----------------
 ---
-- name: Install foundry
+- name: Install docker
   hosts: localhost
   #connection: ssh
   become: true
@@ -37,7 +37,7 @@ Install Playbook
     - foundryvtt
     
  ---
-- name: Install foundry
+- name: Install jenkins
   hosts: localhost
   # connection: ssh
   become: true
